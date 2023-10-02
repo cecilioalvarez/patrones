@@ -19,21 +19,26 @@ public class Persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+	// delegacion que 
+	//funcionaliad tiene este metodo
 	
-	public String getCalle() {
-		
-		return direccion.getCalle();
-	}
-	
-	public int getNumero() {
-		
-		return direccion.getNumero();
-	}
 	public Persona(String nombre, int edad, String calle, int numero) {
 		super();
 		this.nombre = nombre;
 		this.edad = edad;
 		this.direccion = new Direccion(calle, numero);
+	}
+	public String getCalle() {
+		return direccion.getCalle();
+	}
+	public void setCalle(String calle) {
+		direccion.setCalle(calle);
+	}
+	public int getNumero() {
+		return direccion.getNumero();
+	}
+	public void setNumero(int numero) {
+		direccion.setNumero(numero);
 	}
 	
 	
