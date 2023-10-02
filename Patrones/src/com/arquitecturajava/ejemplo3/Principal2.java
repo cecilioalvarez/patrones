@@ -1,4 +1,4 @@
-package com.arquitecturajava.ejemplo2;
+package com.arquitecturajava.ejemplo3;
 
 public class Principal2 {
 
@@ -6,9 +6,8 @@ public class Principal2 {
 
 		Empresa e= new Empresa();
 		e.setCif("1A");
-		Direccion d= new Direccion();
-		d.setCalle("calle1");
-		d.setNumero(1);
+		Direccion d= new Direccion("calle1",1);
+		
 		e.setDireccion(d);
 		
 		Persona p= new Persona();
