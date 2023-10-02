@@ -14,6 +14,12 @@ public class Configurador {
 	// solo existe una instancia para la clase
 	private static Configurador instancia;  //null
 	
+	// es una funcion privada
+	private Configurador() {
+		
+		
+	}
+	//desde la propia clase
 	public static Configurador getInstancia() {
 		
 		if (instancia==null) {
