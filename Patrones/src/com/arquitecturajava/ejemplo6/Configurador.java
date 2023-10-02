@@ -7,9 +7,25 @@ import java.util.Properties;
 
 public class Configurador {
 
+	//variable de instancia
 	private String usuario;
 	private String clave;
 	private String url;
+	// solo existe una instancia para la clase
+	private static Configurador instancia;  //null
+	
+	public static Configurador getInstancia() {
+		
+		if (instancia==null) {
+			//fase de construccion solo se pasa una vez
+			System.out.println("paso una vez");
+			instancia= new Configurador();
+			instancia.cargar();
+		}
+		return instancia;
+	}
+	
+	
 	public String getUsuario() {
 		return usuario;
 	}
@@ -29,16 +45,18 @@ public class Configurador {
 		this.url = url;
 	}
 	
-	
-	public void cargar() {
-		
+	//debe ser un metodo publico de acceso
+	//desde cualquier lugar
+	private void cargar() {
+		//metodo carga los datos del objeto
+		// y lo deja preparado 
 		Properties propiedades= new Properties();
 		System.out.println("carga los datos");
 		try {
 			propiedades.load( new FileInputStream(new File("database.properties")));
-			usuario=propiedades.getProperty("usuario");
-			clave= propiedades.getProperty("clave");
-			url= propiedades.getProperty("url");
+			instancia.setUsuario(propiedades.getProperty("usuario"));
+			instancia.setClave(propiedades.getProperty("clave"));
+			instancia.setUrl(propiedades.getProperty("url"));
 		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
