@@ -7,9 +7,13 @@ public class Principal {
 		Persona p= new Persona();
 		p.setNombre("pepito");
 		p.setEdad(20);
+		p.setCalle("calle1");
+		p.setNumero(1);
 		
 		System.out.println(p.getNombre());
 		System.out.println(p.getEdad());
+		System.out.println(p.getCalle());
+		System.out.println(p.getNumero());
 
 	}
 
