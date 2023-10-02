@@ -17,4 +17,11 @@ public class Motor {
 		
 		System.out.println("el motor arranca con" + potencia+"caballos");
 	}
+
+	public Motor(int potencia) {
+		super();
+		this.potencia = potencia;
+	}
+	
+	
 }

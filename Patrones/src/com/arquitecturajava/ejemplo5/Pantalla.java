@@ -5,6 +5,11 @@ public class Pantalla {
 	
 	private int pulgadas;
 
+	public Pantalla(int pulgadas) {
+		super();
+		this.pulgadas = pulgadas;
+	}
+
 	public int getPulgadas() {
 		return pulgadas;
 	}
