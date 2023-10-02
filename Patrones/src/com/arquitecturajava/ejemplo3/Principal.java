@@ -4,11 +4,9 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		Persona p= new Persona();
-		p.setNombre("pepito");
-		p.setEdad(20);
-		Direccion d= new Direccion("calle1",1);
-		p.setDireccion(d);
+		
+		Persona p= new Persona("pepito",20,"calle1",1);
+	
 		
 		System.out.println(p.getNombre());
 		System.out.println(p.getEdad());

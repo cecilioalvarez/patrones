@@ -7,10 +7,10 @@ public class Principal2 {
 		Empresa e= new Empresa();
 		e.setCif("1A");
 		Direccion d= new Direccion("calle1",1);
-		
+		//asigno la direccion
 		e.setDireccion(d);
 		
-		Persona p= new Persona();
+		Persona p= new Persona("pedro",20,"calle1",2);
 		p.setNombre("pedro");
 		p.setEdad(20);
 		p.setDireccion(d);
