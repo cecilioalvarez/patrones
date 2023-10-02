@@ -1,4 +1,4 @@
-package com.arquitecturajava.ejemplo3;
+package com.arquitecturajava.ejemplo4;
 
 public class Principal4 {
 
@@ -6,8 +6,8 @@ public class Principal4 {
 
 		// le estoy pasando la direccion???
 		Persona p= new Persona("pedro",20,"calle1",2);
-		
-	
+		System.out.println(p.getCalle());
+		System.out.println(p.getNumero());
 		
 		
 		
