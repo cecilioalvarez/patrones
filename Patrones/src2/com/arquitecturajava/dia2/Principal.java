@@ -9,23 +9,22 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		Path ruta = Paths.get("documentoA.txt");
+		Path ruta = Paths.get("documentoB.txt");
 
 		LectorFichero lector= new LectorFichero(ruta);
-		
 		try {
-			List<Factura> facturas=lector.leerFacturas();
+			List<Factura> facturas= lector.leerFacturas();
+			ImpresoraFacturas impresora= new ImpresoraFacturas();
+			impresora.imprimir(facturas);
+			impresora.imprimirEnLinea(facturas);
+			impresora.imprimirOrdenadas(facturas);
 			
-			for (Factura f: facturas) {
-				
-				System.out.println(f.getNumero());
-				System.out.println(f.getImporte());
-				System.out.println(f.getConcepto());
-			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	
 	
 	}
 
