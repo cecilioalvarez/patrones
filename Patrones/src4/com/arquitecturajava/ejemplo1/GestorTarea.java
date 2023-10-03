@@ -1,4 +1,4 @@
-package com.arquitecturajava;
+package com.arquitecturajava.ejemplo1;
 
 import java.util.ArrayList;
 import java.util.List;

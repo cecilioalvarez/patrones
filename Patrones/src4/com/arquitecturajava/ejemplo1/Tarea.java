@@ -1,4 +1,4 @@
-package com.arquitecturajava;
+package com.arquitecturajava.ejemplo1;
 
 public class Tarea implements Cloneable {
 
