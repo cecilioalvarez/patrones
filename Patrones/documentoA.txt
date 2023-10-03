@@ -1,0 +1,2 @@
+1,ordenador,200
+2,televisor,300
