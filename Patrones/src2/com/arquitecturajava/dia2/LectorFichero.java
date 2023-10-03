@@ -30,17 +30,7 @@ public class LectorFichero {
 
 	}
 
-	public List<Factura> leerFacturas() throws IOException {
-
-		List<Factura> lista = new ArrayList<Factura>();
-		for (String linea : leerLineas()) {
-			Factura factura = TransformadorLineaToFactura.transformar(linea);
-			lista.add(factura);
-		}
-
-	return lista;
-
-	}
+	
 
 	public void imprimirLineas() {
 

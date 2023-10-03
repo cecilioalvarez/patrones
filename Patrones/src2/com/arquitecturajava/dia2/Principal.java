@@ -7,25 +7,38 @@ import java.util.List;
 
 public class Principal {
 
+	// principio SRP y vamos a ver el principio OCP
+
+	// Open Closed Principle
+
 	public static void main(String[] args) {
 
 		Path ruta = Paths.get("documentoB.txt");
+		TransformadorLineaToFactura transformador = new TransformadorLineaToFactura();
 
-		LectorFichero lector= new LectorFichero(ruta);
+		LectorFichero lector = new LectorFichero(ruta);
+
 		try {
-			List<Factura> facturas= lector.leerFacturas();
-			ImpresoraFacturas impresora= new ImpresoraFacturas();
+			List<String> lineas = lector.leerLineas();
+
+			List<Factura> facturas = transformador.transformarLista(lineas);
+
+			Formateador formateador = FormateadorFactory.getInstance("Standard");
+			ImpresoraFacturas impresora = new ImpresoraFacturas(formateador);
 			impresora.imprimir(facturas);
-			impresora.imprimirEnLinea(facturas);
-			impresora.imprimirOrdenadas(facturas);
 			
+			formateador = FormateadorFactory.getInstance("Ordenado");
+			impresora.setFormateador(formateador);
+			impresora.imprimir(facturas);
+			
+			formateador = FormateadorFactory.getInstance("Detalle");
+			impresora.setFormateador(formateador);
+			impresora.imprimir(facturas);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	
-	
+
 	}
 
 }

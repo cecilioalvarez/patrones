@@ -4,47 +4,33 @@ import java.util.List;
 
 public class ImpresoraFacturas {
 
-	
+	private Formateador formateador;
+
+	public Formateador getFormateador() {
+		return formateador;
+	}
+
+	public void setFormateador(Formateador formateador) {
+		this.formateador = formateador;
+	}
+
+	public ImpresoraFacturas(Formateador formateador) {
+		super();
+		this.formateador = formateador;
+	}
+
+	private void separadorLinea() {
+		System.out.println();
+		System.out.println("---------------");
+	}
+
 	public void imprimir(List<Factura> facturas) {
 
 		for (Factura f : facturas) {
 
-			System.out.println(f.getNumero());
-			System.out.println(f.getImporte());
-			System.out.println(f.getConcepto());
-			System.out.println("---------------");
+			formateador.format(f);
+			separadorLinea();
 		}
 
 	}
-
-	public void imprimirEnLinea(List<Factura> facturas) {
-
-		for (Factura f : facturas) {
-
-			System.out.print(f.getNumero());
-			System.out.print(",");
-			System.out.print(f.getImporte());
-			System.out.print(",");
-			System.out.print(f.getConcepto());
-			System.out.println();
-			System.out.println("---------------");
-		}
-
-	}
-
-	public void imprimirOrdenadas(List<Factura> facturas) {
-
-		for (Factura f : facturas) {
-
-			System.out.print(f.getNumero());
-			System.out.print(",");
-			System.out.print(f.getConcepto());
-			System.out.print(",");
-			System.out.print(f.getImporte());
-			System.out.println();
-			System.out.println("---------------");
-		}
-
-	}
-
 }
