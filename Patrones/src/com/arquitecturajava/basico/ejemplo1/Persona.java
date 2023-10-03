@@ -1,4 +1,4 @@
-package com.arquitecturajava.ejemplo1;
+package com.arquitecturajava.basico.ejemplo1;
 
 public class Persona {
 

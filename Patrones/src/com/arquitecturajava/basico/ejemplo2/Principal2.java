@@ -1,4 +1,4 @@
-package com.arquitecturajava.ejemplo2;
+package com.arquitecturajava.basico.ejemplo2;
 
 public class Principal2 {
 
