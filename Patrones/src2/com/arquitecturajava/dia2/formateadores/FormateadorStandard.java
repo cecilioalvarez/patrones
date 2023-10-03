@@ -1,6 +1,8 @@
-package com.arquitecturajava.dia2;
+package com.arquitecturajava.dia2.formateadores;
 
-public class FormateadorStandard extends Formateador {
+import com.arquitecturajava.dia2.Factura;
+
+class FormateadorStandard extends Formateador {
 
 	@Override
 	public void format(Factura factura) {

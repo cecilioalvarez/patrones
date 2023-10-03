@@ -2,6 +2,8 @@ package com.arquitecturajava.dia2;
 
 import java.util.List;
 
+import com.arquitecturajava.dia2.formateadores.Formateador;
+
 public class ImpresoraFacturas {
 
 	private Formateador formateador;

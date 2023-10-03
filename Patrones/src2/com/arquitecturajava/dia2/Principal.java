@@ -5,6 +5,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import com.arquitecturajava.dia2.formateadores.Formateador;
+import com.arquitecturajava.dia2.formateadores.FormateadorTipo;
+
 public class Principal {
 
 	// principio SRP y vamos a ver el principio OCP
@@ -23,15 +26,15 @@ public class Principal {
 
 			List<Factura> facturas = transformador.transformarLista(lineas);
 
-			Formateador formateador = FormateadorFactory.getInstance("Standard");
+			Formateador formateador = Formateador.getInstance(FormateadorTipo.Standard);
 			ImpresoraFacturas impresora = new ImpresoraFacturas(formateador);
 			impresora.imprimir(facturas);
 			
-			formateador = FormateadorFactory.getInstance("Ordenado");
+			formateador = Formateador.getInstance(FormateadorTipo.Ordenado);
 			impresora.setFormateador(formateador);
 			impresora.imprimir(facturas);
 			
-			formateador = FormateadorFactory.getInstance("Detalle");
+			formateador = Formateador.getInstance(FormateadorTipo.Detalle);
 			impresora.setFormateador(formateador);
 			impresora.imprimir(facturas);
 		} catch (IOException e) {
