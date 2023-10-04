@@ -13,5 +13,15 @@ public class Principal {
 		robot.setBrazo(new BrazoMerengue());
 		robot.cocinar();
 		
+		System.out.println("para");
+		System.out.println("cambia brazo");
+		
+		robot.setBrazo(new BrazoPicador());
+		robot.cocinar();
+		
+		robot.setBrazo(new BrazoAdaptador(new BrazoCalendador()));
+		robot.cocinar();
+		
+		
 	}
 }
