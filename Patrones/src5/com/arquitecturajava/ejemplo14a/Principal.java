@@ -7,15 +7,9 @@ public class Principal {
 	
 		GestorComandos gestor = inicializarGestor();
 		/////////
-		gestor.getComando("altafinal").ejecutar();
+		gestor.getComando("altarenovarfinal").ejecutar();
 	
-		System.out.println("... tiempo ....");
 		
-		gestor.getComando("renovarfinal").ejecutar();
-		
-		System.out.println("... tiempo ....");
-
-		gestor.getComando("altafinal").ejecutar();
 	}
 
 	private static GestorComandos inicializarGestor() {
@@ -31,10 +25,18 @@ public class Principal {
 		cc2.addComando(new ComandoTarjetaAcceso());
 		
 		
-		GestorComandos gestor= new GestorComandos();
+		GestorComandos gestor=GestorComandos.getInstance();
 		
-		gestor.registrar(cc.getNombre(), cc);
-		gestor.registrar(cc2.getNombre(), cc2);
+		
+		//comando es un comando compuesto de comandos compuestos
+		ComandoCompuesto cc3= new ComandoCompuesto("altarenovarfinal");
+		cc3.addComando(cc);
+		cc3.addComando(cc2);
+		
+		gestor.registrar(cc3.getNombre(), cc3);
+		
+		//gestor.registrar(cc.getNombre(), cc);
+		//gestor.registrar(cc2.getNombre(), cc2);
 		return gestor;
 	}
 
