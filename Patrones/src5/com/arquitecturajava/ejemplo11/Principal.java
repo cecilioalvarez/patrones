@@ -23,9 +23,25 @@ public class Principal {
 		// relacionalos
 		d1.addFichero(subcarpeta);
 		
+		// listado es un listado parcial ya que 
+		// no tenemos un acceso completo a toda la jerarquia
+		recorrerDirectorios(d1);
 		
 		
 		
+		
+	}
+
+	private static void recorrerDirectorios(Directorio d1) {
+		
+		for (Fichero f : d1.getLista()) {
+			
+			System.out.println(f.getNombre());
+			if (f.esDirectorio()) {
+				// cuando se llama a si misma
+				recorrerDirectorios((Directorio)f);
+			}
+		}
 	}
 
 }

@@ -18,4 +18,14 @@ public class Directorio extends Fichero {
 		lista.add(f);
 	}
 
+	public List<Fichero> getLista() {
+		return lista;
+	}
+
+	public void setLista(List<Fichero> lista) {
+		this.lista = lista;
+	}
+	
+	
+
 }
