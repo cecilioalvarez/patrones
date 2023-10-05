@@ -1,9 +1,9 @@
-package com.arquitecturajava.ejemplo14a;
+package com.arquitecturajava.ejemplo14a.comandos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ComandoCompuesto extends Comando {
+class ComandoCompuesto extends Comando {
 
 	private String nombre;
 	

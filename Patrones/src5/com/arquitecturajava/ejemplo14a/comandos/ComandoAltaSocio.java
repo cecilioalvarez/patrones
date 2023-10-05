@@ -1,6 +1,6 @@
-package com.arquitecturajava.ejemplo14a;
+package com.arquitecturajava.ejemplo14a.comandos;
 
-public class ComandoAltaSocio  extends Comando{
+class ComandoAltaSocio  extends Comando{
 
 	@Override
 	public void ejecutar() {

@@ -1,4 +1,4 @@
-package com.arquitecturajava.ejemplo14a;
+package com.arquitecturajava.ejemplo14a.comandos;
 
 public abstract class Comando {
 

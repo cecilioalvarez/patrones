@@ -1,6 +1,6 @@
-package com.arquitecturajava.ejemplo14a;
+package com.arquitecturajava.ejemplo14a.comandos;
 
-public class ComandoTarjetaAcceso  extends Comando{
+class ComandoTarjetaAcceso  extends Comando{
 
 	@Override
 	public void ejecutar() {
